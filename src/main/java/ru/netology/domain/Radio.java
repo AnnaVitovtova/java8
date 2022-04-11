@@ -22,11 +22,10 @@ public class Radio {
         if (currentRadioStation >= 9) {
             return;
         }
-        if(currentRadioStation < 9){
            this.currentRadioStation = currentRadioStation + 1;
         }
 
-    }
+
 
 
     public void setPrevRadioStation(int currentRadioStation) {
