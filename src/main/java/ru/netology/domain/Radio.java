@@ -2,9 +2,14 @@ package ru.netology.domain;
 
 public class Radio {
     private int currentRadioStation;
+    private int currentVolume;
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
+    }
+
+    public int getCurrentVolume() {
+        return this.currentVolume;
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
@@ -22,17 +27,15 @@ public class Radio {
         if (currentRadioStation >= 9) {
             return;
         }
-           this.currentRadioStation = currentRadioStation + 1;
-        }
-
-
+        this.currentRadioStation = currentRadioStation + 1;
+    }
 
 
     public void setPrevRadioStation(int currentRadioStation) {
         if (currentRadioStation <= 0) {
             this.currentRadioStation = 9;
         }
-        if(currentRadioStation > 0){
+        if (currentRadioStation > 0) {
             this.currentRadioStation = currentRadioStation - 1;
         }
     }
@@ -41,11 +44,6 @@ public class Radio {
         this.currentRadioStation = currentRadioStation;
     }
 
-    private int currentVolume;
-
-    public int getCurrentVolume() {
-        return this.currentVolume;
-    }
 
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume > 10) {
