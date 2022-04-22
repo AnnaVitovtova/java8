@@ -9,7 +9,7 @@ public class Radio {
     }
 
     public int getCurrentVolume() {
-        return this.currentVolume;
+        return currentVolume;
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
@@ -22,29 +22,6 @@ public class Radio {
         this.currentRadioStation = currentRadioStation;
     }
 
-
-    public void setNextRadioStation(int currentRadioStation) {
-        if (currentRadioStation >= 9) {
-            return;
-        }
-        this.currentRadioStation = currentRadioStation + 1;
-    }
-
-
-    public void setPrevRadioStation(int currentRadioStation) {
-        if (currentRadioStation <= 0) {
-            this.currentRadioStation = 9;
-        }
-        if (currentRadioStation > 0) {
-            this.currentRadioStation = currentRadioStation - 1;
-        }
-    }
-
-    public void setNumberRadioStation(int currentRadioStation) {
-        this.currentRadioStation = currentRadioStation;
-    }
-
-
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume > 10) {
             return;
@@ -56,19 +33,36 @@ public class Radio {
     }
 
 
+    public void setNextRadioStation() {
+        if (currentRadioStation > 8) {
+            this.currentRadioStation = 0;
+        } else {
+            this.currentRadioStation = currentRadioStation + 1;
+        }
+    }
+
+    public void setPrevRadioStation() {
+        if (currentRadioStation < 1) {
+            this.currentRadioStation = 9;
+        } else {
+            this.currentRadioStation = currentRadioStation - 1;
+        }
+    }
+
+
     public void setIncreaseVolume() {
-
-
-        if (this.currentVolume < 10) {
-            this.currentVolume = this.currentVolume + 1;
+        if (currentVolume > 9) {
+            this.currentVolume = 10;
+        } else {
+            this.currentVolume = currentVolume + 1;
         }
     }
 
     public void setDecreaseVolume() {
-
-
-        if (this.currentVolume > 0) {
-            this.currentVolume = this.currentVolume - 1;
+        if (currentVolume < 1) {
+            this.currentVolume = 0;
+        } else {
+            this.currentVolume = currentVolume - 1;
         }
     }
 }
